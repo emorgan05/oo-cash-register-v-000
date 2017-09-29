@@ -10,7 +10,8 @@ class CashRegister
     @discount
   end
 
-  def add_item(item, price)
-    @total += price
+  def add_item(item, price, quantity = 1)
+    @prev_total = @total
+    @current_total = (price * quantity) + @total
   end
 end
