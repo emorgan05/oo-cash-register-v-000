@@ -6,6 +6,7 @@ class CashRegister
   def initialize(discount = 0)
     @total = 0
     @discount = discount
+    @@all = []
   end
 
   def discount
@@ -13,7 +14,7 @@ class CashRegister
   end
 
   def add_item(item, price, quantity = 1)
-    @@all << item * quantity
+    @@all << (item) * quantity
     @prev_total = @total
     @total += (price * quantity)
   end
