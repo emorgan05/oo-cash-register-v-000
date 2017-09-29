@@ -14,4 +14,10 @@ class CashRegister
     @prev_total = @total
     @total += (price * quantity)
   end
+
+  def apply_discount
+    percent = @discount/100.to_f
+    @total = @total - (@total * percent)
+    "Success. Your new total is #{@total}"
+  end
 end
